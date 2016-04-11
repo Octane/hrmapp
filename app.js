@@ -1,4 +1,5 @@
 (function () {
+    var deviceNode = document.querySelector('.device');
     var speedUpNode = document.querySelector('#speedup');
     var speedDownNode = document.querySelector('#speeddown');
     var toolbarNode = document.querySelector('.toolbar');
@@ -37,6 +38,8 @@
         curHrValue = parseInt(curHrNode.textContent, 10);
 
         requestAnimationFrame(function () {
+            deviceNode.classList.remove('device_vibration');
+
             var newHrValue = Math.min(Math.max(curHrValue + Math.round(Math.random() * stepUp) - Math.round(Math.random() * stepDown), minHrValue), maxHrValue);
 
             curHrValue = newHrValue;
@@ -59,9 +62,12 @@
                     if (newHrZone > 3) {
                         speedDownNode.play();
 
+
                     } else if (newHrZone < 2) {
                         speedUpNode.play();
                     }
+
+                    deviceNode.classList.add('device_vibration');
                 }
             }
 
