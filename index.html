@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>rhm.app prototype</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="device">
+        <div class="display viewport">
+            <div class="workout">
+                <div class="workout__title">
+                    <div class="default">HEART RATE</div>
+                    <div class="zone zone-1">VERY LIGHT</div>
+                    <div class="zone zone-2">LIGHT</div>
+                    <div class="zone zone-3">MODERATE</div>
+                    <div class="zone zone-4">HARD</div>
+                    <div class="zone zone-5">MAXIMUM</div>
+                </div>
+                <div class="workout__heart-rate">72</div>
+                <div class="workout__button workout__button_zone-1 workout__button_paused">
+                    <span class="begin">BEGIN WORKOUT</span>
+                    <span class="pause">PAUSE WORKOUT</span>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu__item">WORKOUT</div>
+                <div class="menu__item">HEART ZONES</div>
+                <div class="menu__item">VOICE FEEDBACK</div>
+                <div class="menu__item">BLUETOOTH DEVICE</div>
+                <div class="menu__item">LANGUAGE</div>
+                <div class="menu__item">ABOUT</div>
+            </div>
+            <div class="toolbar">
+                <div class="toolbar__burger">≡</div>
+            </div>
+        </div>
+    </div>
+    <audio id="speedup" src="speedup.mp3" preload></audio>
+    <audio id="speeddown" src="speeddown.mp3" preload></audio>
+    <script src="app.js"></script>
+</body>
+</html>

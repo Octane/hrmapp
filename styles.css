@@ -1,0 +1,253 @@
+body {
+    margin: 0;
+    background: #fff;
+    font: 16px/1 "San Francisco", Arial, sans-serif;
+    color: #333;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+.device {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: calc(1166px /  3);
+    height: calc(2139px / 3);
+    margin: auto;
+    background: url(iphone.png) no-repeat;
+    background-position: 0 20px;
+    background-size: 100%;
+}
+
+.viewport {
+    overflow: hidden;
+    position: absolute;
+    top: 120px;
+    left: 48px;
+    width: 288px;
+    height: 488px;
+    background: #fff;
+}
+
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 48px;
+}
+.toolbar.hidden {
+    visibility: hidden;
+}
+
+.toolbar__burger {
+    width: 58px;
+    height: 48px;
+    font-size: 36px;
+    line-height: 48px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: -80%;
+    box-sizing: border-box;
+    width: 80%;
+    height: 100%;
+    padding-top: 16px;
+    background: #8e8e93;
+}
+
+.menu__item {
+    box-sizing: border-box;
+    height: 48px;
+    padding-left: 16px;
+    line-height: 48px;
+    color: #fafafa;
+    cursor: pointer;
+}
+
+.workout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.workout_zone-1 .workout__title,
+.workout_zone-2 .workout__title,
+.workout_zone-3 .workout__title,
+.workout_zone-4 .workout__title,
+.workout_zone-5 .workout__title {
+    opacity: 0.5;
+}
+
+.workout__title .zone {
+    display: none;
+}
+
+.workout_zone-1 .workout__title .default,
+.workout_zone-2 .workout__title .default,
+.workout_zone-3 .workout__title .default,
+.workout_zone-4 .workout__title .default,
+.workout_zone-5 .workout__title .default {
+    display: none;
+}
+
+.workout_zone-1 .workout__title .zone-1,
+.workout_zone-2 .workout__title .zone-2,
+.workout_zone-3 .workout__title .zone-3,
+.workout_zone-4 .workout__title .zone-4,
+.workout_zone-5 .workout__title .zone-5 {
+    display: block;
+}
+
+.workout_zone-1 .workout__title,
+.workout_zone-1 .workout__heart-rate {
+    color: #fff;
+}
+.workout_zone-2 .workout__title,
+.workout_zone-2 .workout__heart-rate {
+    color: #fff;
+}
+.workout_zone-3 .workout__title,
+.workout_zone-3 .workout__heart-rate {
+    color: #fff;
+}
+.workout_zone-4 .workout__title,
+.workout_zone-4 .workout__heart-rate {
+    color: #fff;
+}
+.workout_zone-5 .workout__title,
+.workout_zone-5 .workout__heart-rate {
+    color: #fff;
+}
+
+.workout_zone-1,
+.workout__button_zone-1 {
+    background: #5ac8fa;
+}
+
+.workout_zone-2,
+.workout__button_zone-2 {
+    background: #7cc234;
+}
+
+.workout_zone-3,
+.workout__button_zone-3 {
+    background: #ffcc00;
+}
+
+.workout_zone-4,
+.workout__button_zone-4 {
+    background: #b43cbc;
+}
+
+.workout_zone-5,
+.workout__button_zone-5 {
+    background: #e92744;
+}
+
+.workout__title {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    color: #8e8e93;
+    font-size: 28px;
+    line-height: 48px;
+    text-align: center;
+}
+
+.workout__heart-rate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    margin: auto;
+    font-size: 120px;
+    line-height: 120px;
+    text-align: center;
+}
+
+.workout__button {
+    position:  absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.workout__button .pause {
+    display: inline;
+}
+
+.workout__button .begin {
+    display: none;
+}
+
+.workout__button_paused .pause {
+    display: none;
+}
+
+.workout__button_paused .begin {
+    display: inline;
+}
+
+.viewport_with-menu .menu {
+    animation-name: menu;
+    animation-duration: 0.3s;
+    animation-timing-function: initial;
+    animation-delay: initial;
+    animation-iteration-count: 1;
+    animation-direction: initial;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+}
+
+.viewport_with-menu .toolbar,
+.viewport_with-menu .workout {
+    animation-name: move;
+    animation-duration: 0.3s;
+    animation-timing-function: initial;
+    animation-delay: initial;
+    animation-iteration-count: 1;
+    animation-direction: initial;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+}
+
+@keyframes menu {
+    from {
+        left: -80%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes move {
+    from {
+        left: 0;
+    }
+    to {
+        left: 80%
+    }
+}
