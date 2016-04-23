@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    background: #fff;
+    font: 16px/1 "Helvetica Neue", sans-serif;
+    font-weight: 200;
+    color: #333;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+a, a:link, a:visited, a:hover, a:active, a:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.device {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: calc(1166px /  3);
+    height: calc(2139px / 3);
+    margin: auto;
+    background: url(iphone.png) no-repeat;
+    background-position: 0 20px;
+    background-size: 100%;
+}
+.device_vibration {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.viewport {
+    overflow: hidden;
+    position: absolute;
+    top: 120px;
+    left: 48px;
+    width: 288px;
+    height: 488px;
+    background: #fff;
+}
+
+.toolbar {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 48px;
+}
+
+.toolbar.hidden {
+    visibility: hidden;
+}
+
+.toolbar__burger {
+    width: 58px;
+    height: 48px;
+    font-family: Verdana;
+    font-size: 36px;
+    line-height: 48px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.toolbar__burger_white {
+    color: #fff;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: -80%;
+    box-sizing: border-box;
+    width: 80%;
+    height: 100%;
+    padding-top: 16px;
+    background: #8e8e93;
+}
+
+.menu__item,
+a.menu__item {
+    display: block;
+    box-sizing: border-box;
+    height: 48px;
+    padding-left: 16px;
+    line-height: 48px;
+    color: #fafafa;
+    cursor: pointer;
+}
+
+.viewport_with-menu .menu {
+    animation-name: menu;
+    animation-duration: 0.3s;
+    animation-timing-function: initial;
+    animation-delay: initial;
+    animation-iteration-count: 1;
+    animation-direction: initial;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+}
+
+.viewport_with-menu .toolbar,
+.viewport_with-menu .workout,
+.viewport_with-menu .heart-zones {
+    animation-name: move;
+    animation-duration: 0.3s;
+    animation-timing-function: initial;
+    animation-delay: initial;
+    animation-iteration-count: 1;
+    animation-direction: initial;
+    animation-fill-mode: forwards;
+    animation-play-state: initial;
+}
+
+@keyframes menu {
+    from {
+        left: -80%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes move {
+    from {
+        left: 0;
+    }
+    to {
+        left: 80%
+    }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
